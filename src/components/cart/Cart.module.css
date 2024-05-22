@@ -47,8 +47,8 @@
   
   .actions button:hover,
   .actions button:active {
-    background-color: #5a1a01;
-    border-color: #5a1a01;
+    background-color: #30b6db;
+    border-color: #33d6a3;
     color: white;
   }
   
@@ -57,6 +57,6 @@
   }
   
   .actions .button {
-    background-color: #8a2b06;
+    background-color: #24d5de;
     color: white;
   }

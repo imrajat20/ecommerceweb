@@ -1,35 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import classes from "./Cart.module.css";
 import Modal from "../UI/Modal";
-const cartElements = [
-  {
-  
-  title: 'Colors',
-  price: 100,
-  imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%201.png',
-  quantity: 2,
-  },
-  
-  {
-  title: 'Black and white Colors',
-  price: 50,
-  imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%202.png',
-  quantity: 3,
-  },
-  
-  {
-  title: 'Yellow and Black Colors',
-  price: 70,
-  imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%203.png',
-  quantity: 1,
-  
-  }
-]
-
+import CartContext from "../../store/cart-context";
 
 const Cart = (props) => {
+  const cartCtx = useContext(CartContext);
 
-  const [products, setProducts] = useState(cartElements);
+  const [products, setProducts] = useState(cartCtx.items);
 
   const deleteHandler = (index) => {
     const newProducts = products.filter((_, i) => i !== index);
@@ -48,21 +25,22 @@ const Cart = (props) => {
     ))}
   </ul>
 );
+let total = 0;
+products.forEach(item => {
+  total += item.price || 0;
+});
 
-let amount=0;
-amount = products.forEach((element) => {
-    amount = amount+ Number(element.price);
-   })
 
   return (
     <Modal onClose={props.onClose}>
       {cartItems}
       <div className={classes.total}>
-        <span>Total amount:{amount}</span>
+        <span>Total amount:</span>
+        <span>${total}</span>
       </div>
       <div className={classes.actions}>
         <button className={classes["button-alt"]} onClick={props.onClose}>Close</button>
-        <button className={classes.button}>Order</button>
+        <button className={classes.button}>Purchase</button>
       </div>
     </Modal>
   );

@@ -3,6 +3,7 @@ import './App.css';
 import FrontPage from './components/FrontPage/FrontPage';
 import Cart from './components/cart/Cart';
 import Items from './components/Items/Items';
+import CartProvider from './store/CartProvider';
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -15,11 +16,11 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <CartProvider>
        { cartIsShown && <Cart onClose={hideCart}/>}
       <FrontPage onClick={showCart}></FrontPage>
       <Items/>
-    </div>
+    </CartProvider>
   );
 }
 

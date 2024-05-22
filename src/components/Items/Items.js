@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext } from "react";
 import classes from './Items.module.css';
+import CartContext from "../../store/cart-context";
 
 const productsArr = [
     {
@@ -25,15 +26,25 @@ const productsArr = [
   ];
 const Items = props => {
 
+  const cartCtx = useContext(CartContext);
+
+  const addToCartHandler = (product) => {
+    cartCtx.addItem(product);
+  };
+
   return (
+    <div>
+      <h1 className={classes.music}>Music</h1>
     <div className={classes.container}>
       {productsArr.map((product, index) => (
         <div key={index} className={classes.card}>
           <img src={product.imageUrl} alt={product.title} className={classes.image} />
           <h2>{product.title}</h2>
           <p>${product.price}</p>
+          <button onClick={() => addToCartHandler(product)}>Add to cart</button>
         </div>
       ))}
+    </div>
     </div>
   );
 };

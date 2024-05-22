@@ -1,0 +1,18 @@
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    columns: 2;
+  }
+  .card{
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 200px;
+}
+.image {
+    width: 100%;
+    height: auto;
+}

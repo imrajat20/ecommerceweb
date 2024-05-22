@@ -13,7 +13,7 @@ const FrontPage = (props) => {
                 <button  className={classes.cart} onClick={props.onClick}>Cart</button>
                 
             </div>
-            <div className={classes.row2}> The Generics</div>
+            <h1 className={classes.row2}> The Generics</h1>
             </div>
     );
 };

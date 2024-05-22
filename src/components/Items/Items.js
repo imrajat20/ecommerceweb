@@ -1,4 +1,6 @@
 import React from "react";
+import classes from './Items.module.css';
+
 const productsArr = [
     {
       title: 'Colors',
@@ -24,37 +26,16 @@ const productsArr = [
 const Items = props => {
 
   return (
-    <div style={styles.container}>
+    <div className={classes.container}>
       {productsArr.map((product, index) => (
-        <div key={index} style={styles.card}>
-          <img src={product.imageUrl} alt={product.title} style={styles.image} />
+        <div key={index} className={classes.card}>
+          <img src={product.imageUrl} alt={product.title} className={classes.image} />
           <h2>{product.title}</h2>
           <p>${product.price}</p>
         </div>
       ))}
     </div>
   );
-};
-
-const styles = {
-  container: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexWrap: 'wrap',
-    gap: '20px',
-    padding: '20px',
-  },
-  card: {
-    border: '1px solid #ccc',
-    borderRadius: '8px',
-    padding: '20px',
-    textAlign: 'center',
-    width: '200px',
-  },
-  image: {
-    width: '100%',
-    height: 'auto',
-  },
 };
 
 

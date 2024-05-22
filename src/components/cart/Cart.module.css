@@ -8,10 +8,12 @@
     border-radius: 10px;
   }
   .list {
-    background: rgb(132, 255, 8);
+    display: flex;
+    background: rgb(193, 180, 180);
     padding: 20px;
     margin-bottom: 5px;
     border-radius: 10px;
+    justify-content: space-around;
   }
   
   .total {

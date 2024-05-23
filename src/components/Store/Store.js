@@ -31,9 +31,18 @@ const Store = props => {
   const addToCartHandler = (product) => {
     cartCtx.addItem(product);
   };
+  const cartCntxt = useContext(CartContext);
+    let quantity = cartCntxt.items.length;
+
 
   return (
     <div>
+      <div>
+      <button className={classes.cart} onClick={props.onClick}>
+                    Cart
+                    <span className={classes.badge}>{quantity}</span>
+                </button>
+      </div>
       <h1 className={classes.music}>Music</h1>
     <div className={classes.container}>
       {productsArr.map((product, index) => (

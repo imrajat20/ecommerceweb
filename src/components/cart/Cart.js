@@ -6,27 +6,29 @@ import CartContext from "../../store/cart-context";
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
 
+  const [products, setProducts] = useState(cartCtx.items);
 
 
-  // const deleteHandler = (index) => {
-  //   const newProducts = cartCtx.items.filter((_, i) => i !== index);
-  //   setProducts(newProducts);
-  // };
+
+  const deleteHandler = (index) => {
+   const newProducts = products.filter((_, i) => i !== index);
+     setProducts(newProducts);
+   };
     
   const cartItems = (
     <ul className={classes["cart-items"]}>
-    {cartCtx.items.map((item,index) => (
+    {products.map((item,index) => (
    <li className={classes.list} key={index}>
         <div>Name:{item.title}</div>
          <span>Price:{item.price}</span>
           <span>Quantity:{item.quantity}</span>
-          {/* <button onClick={() => deleteHandler(index)}>Delete</button> */}
+          <button onClick={() => deleteHandler(index)}>Delete</button> 
         </li>
     ))}
   </ul>
 );
 let total = 0;
-cartCtx.items.forEach(item => {
+products.forEach(item => {
   total += item.price || 0;
 });
 

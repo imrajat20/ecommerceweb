@@ -19,3 +19,18 @@
 .music{
   text-align: center;
 }
+.cart {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+.badge {
+  background-color: #d3d477;
+  padding: 0.25rem 1rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+  font-weight: bold;
+}

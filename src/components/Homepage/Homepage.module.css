@@ -1,0 +1,13 @@
+.tour{
+    text-align: center;
+}
+.card{
+  display: flexbox;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    columns: 2;
+  }

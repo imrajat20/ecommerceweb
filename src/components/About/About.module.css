@@ -1,0 +1,8 @@
+.head{
+    text-align: center;
+}
+.para{
+    row-gap: 10px;
+    tab-size: 50cap;
+    display: flex;
+}

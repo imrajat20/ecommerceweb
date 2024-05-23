@@ -24,7 +24,7 @@ const productsArr = [
       imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
     },
   ];
-const Items = props => {
+const Store = props => {
 
   const cartCtx = useContext(CartContext);
 
@@ -50,4 +50,4 @@ const Items = props => {
 };
 
 
-export default Items;
+export default Store;

@@ -8,6 +8,7 @@ const CartProvider = props => {
     const addItemToCart = item => {
         //items.push(item);
         updateItems([...items, item]);
+        console.log(item);
         //cartContext.items.push(item);
     };
 
@@ -20,6 +21,7 @@ const CartProvider = props => {
         removeItem: removeItemFromCartHandler ,
     };
     return (
+
         <CartContext.Provider value={cartContext}>
         {props.children}
     </CartContext.Provider>

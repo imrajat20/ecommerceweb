@@ -1,27 +1,34 @@
-import { useState } from 'react';
-import './App.css';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import FrontPage from './components/FrontPage/FrontPage';
+import About from './components/About/About';
+import Store from './components/Store/Store';
 import Cart from './components/cart/Cart';
-import Items from './components/Items/Items';
 import CartProvider from './store/CartProvider';
 
-function App() {
+const App = () => {
+
   const [cartIsShown, setCartIsShown] = useState(false);
 
-  const showCart = () => {
-    setCartIsShown(true);
-  };
-  const hideCart = () => {
-    setCartIsShown(false);
-  };
+   const showCart = () => {
+     setCartIsShown(true);
+   };
+   const hideCart = () => {
+     setCartIsShown(false);
+   };
 
-  return (
-    <CartProvider>
-       { cartIsShown && <Cart onClose={hideCart}/>}
-      <FrontPage onClick={showCart}></FrontPage>
-      <Items/>
-    </CartProvider>
-  );
-}
+    return (
+        <CartProvider>
+          <Router>
+            {cartIsShown && <Cart onClick={hideCart}/>}
+            <FrontPage onClick={showCart} />
+            <Routes>
+                <Route path="/Store" element={<Store/>} />
+                <Route path="/About" element={<About/>} />
+            </Routes>
+        </Router>
+        </CartProvider>
+    );
+};
 
 export default App;

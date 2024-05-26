@@ -6,6 +6,7 @@ import Store from './components/Store/Store';
 import Cart from './components/cart/Cart';
 import CartProvider from './store/CartProvider';
 import Homepage from './components/Homepage/Homepage';
+import ContactUS from './components/ContactUS/ContactUS';
 
 const App = () => {
 
@@ -27,6 +28,7 @@ const App = () => {
                 <Route path="/Store" element={<Store onClick={showCart} />} />
                 <Route path="/About" element={<About/>} />
                 <Route path="/Homepage" element={<Homepage/>} />
+                <Route path='/ContactUS' element={<ContactUS/>}/>
             </Routes>
         </Router>
         </CartProvider>

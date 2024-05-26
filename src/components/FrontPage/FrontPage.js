@@ -10,6 +10,7 @@ const FrontPage = (props) => {
                     <Link to="/Homepage" className={classes.column}>Home</Link>
                     <Link to="/Store" className={classes.column}>Store</Link>
                     <Link to="/About" className={classes.column}>About</Link>
+                    <Link to="/ContactUS" className={classes.column}>ContactUS</Link>
                 </div>
             </div>
             <h1 className={classes.row2}>The Generics</h1>

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import classes from "./Cart.module.css";
 import Modal from "../UI/Modal";
 import CartContext from "../../store/cart-context";
@@ -10,10 +10,14 @@ const Cart = (props) => {
 
 
 
-  const deleteHandler = (index) => {
-   const newProducts = products.filter((_, i) => i !== index);
-     setProducts(newProducts);
-   };
+  //  const deleteHandler = (index) =>{
+  //   const newProducts = products.filter((_, i) => i !== index);
+  //     setProducts(newProducts);
+  //   };
+  const deleteHandler = useCallback((index) => {
+    const newProducts = products.filter((_, i) => i !== index);
+    setProducts(newProducts);
+  }, [products, setProducts]);
     
   const cartItems = (
     <ul className={classes["cart-items"]}>

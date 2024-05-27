@@ -1,4 +1,36 @@
 .form{
     text-align: center;
-    justify-content: space-around;
+    background-color: #f3abab;
+    justify-content: space-between;
+    margin-left: 35%;
+    margin-right: 35%;
+    margin-top: 0%;
+    padding: 5%;
+    border-radius: 5%;
+}
+.button{
+    font: inherit;
+    cursor: pointer;
+    background-color: greenyellow;
+    border: 1px solid #f3abab;
+    padding: 0.5rem 2rem;
+    border-radius: 25px;
+    margin-left: 1rem;
+    text-align: center;
+}
+.number{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+   
+}
+.title{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+}
+.mail{
+    text-align: center;
+    justify-content: space-between;
+    display: flex;
 }

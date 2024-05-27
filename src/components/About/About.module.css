@@ -1,8 +1,38 @@
-.head{
+/* .head{
     text-align: center;
 }
 .para{
     row-gap: 10px;
     tab-size: 50cap;
     display: flex;
+} */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 40px auto;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.head {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    text-align: center;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+    width: 100%;
+}
+
+.para {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    text-align: justify;
+    color: #555;
 }

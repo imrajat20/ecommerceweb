@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import classes from './FrontPage.module.css';
 
 const FrontPage = (props) => {
@@ -7,10 +7,11 @@ const FrontPage = (props) => {
         <div>
             <div className={classes.container}>
                 <div className={classes.row}>
-                    <Link to="/Homepage" className={classes.column}>Home</Link>
-                    <Link to="/Store" className={classes.column}>Store</Link>
-                    <Link to="/About" className={classes.column}>About</Link>
-                    <Link to="/ContactUS" className={classes.column}>ContactUS</Link>
+                    <NavLink to="/Homepage" className={classes.column}>Home</NavLink>
+                    <NavLink to="/Store" className={classes.column}>Store</NavLink>
+                    <NavLink to="/About" className={classes.column}>About</NavLink>
+                    <NavLink to="./ProductPage" className={classes.column}>Product</NavLink>
+                    <NavLink to="/ContactUS" className={classes.column}>ContactUS</NavLink>
                 </div>
             </div>
             <h1 className={classes.row2}>The Generics</h1>

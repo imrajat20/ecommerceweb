@@ -33,28 +33,41 @@ const ContactUS = (props) => {
 
     return (
         <form onSubmit={formHandler} className={classes.form}>
+            <br/>
+            <div className={classes.title}>
             <label htmlFor="name">Name:</label>
             <input 
                 id="name" 
                 type="text"
+                placeholder="type name...."
                 value={name}
                 onChange={(e) => setName(e.target.value)} />
-            <br/>
+            </div>
+           
+              <br/>
+            
+            <div className={classes.mail}>
             <label htmlFor="email">Email:</label>
             <input 
                 id="email" 
                 type="email"
+                placeholder="type email...."
                 value={email}
                 onChange={(e) => setEmail(e.target.value)} />
-            <br/>
-            <label htmlFor="phone">Phone Number:</label>
+            </div>
+          <br/>
+           <div className={classes.number}>
+           <label htmlFor="phone">Number:</label>
             <input 
                 id="phone" 
                 type="tel"
+                placeholder="type phone number...."
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}/>
+           </div>
+          <br/>
+            <button className={classes.button} type="submit">Submit</button>
             <br/>
-            <button type="submit">Submit</button>
         </form>
     );
 };

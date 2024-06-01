@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import FrontPage from './components/FrontPage/FrontPage';
 import About from './components/About/About';
 import Store from './components/Store/Store';
@@ -9,6 +9,7 @@ import Homepage from './components/Homepage/Homepage';
 import ContactUS from './components/ContactUS/ContactUS';
 import ProductPage from './components/ProductPage/ProductPage';
 import ProductDetails from './components/ProductPage/ProductDetails';
+import Login from './components/Login/Login';
 
 const App = () => {
 
@@ -27,13 +28,14 @@ const App = () => {
             {cartIsShown && <Cart onClick={hideCart}/>}
             <FrontPage />
             <Routes>
-                <Route path='' element={<redirect path="/Store"/>}/>
+                <Route path='/' element={<redirect to="/Store"/>}/>
                 <Route path="/Store" element={<Store onClick={showCart} />} />
                 <Route path="/About" element={<About/>} />
                 <Route path="/Homepage" element={<Homepage/>} />
                 <Route path='/ProductPage' element={<ProductPage/>}/>
                 <Route path='/ContactUS' element={<ContactUS/>}/>
                 <Route path='/ProductPage/:detail' element={<ProductDetails/>}/>
+                <Route path='/Login' element={<Login/>}/>
             </Routes>
         </Router>
         </CartProvider>

@@ -4,6 +4,15 @@ import CartContext from "./cart-context";
 const CartProvider = props => {
 
     const [items, updateItems] = useState([]);
+    const initialToken = localStorage.getItem('idToken');
+
+    const [token, setToken] = useState(initialToken);
+
+    const isLoggedInHandler = !! token;
+
+    const loginHandler = (token) => {
+        setToken(token);
+    };
 
     const addItemToCart = item => {
         //items.push(item);
@@ -21,6 +30,9 @@ const CartProvider = props => {
         totolAmount: 0,
         addItem: addItemToCart,
         removeItem: removeItemFromCartHandler ,
+        token: token,
+        isLoggedIn: isLoggedInHandler,
+        login:loginHandler
     };
     return (
 

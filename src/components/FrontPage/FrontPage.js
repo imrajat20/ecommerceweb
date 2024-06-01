@@ -12,6 +12,7 @@ const FrontPage = (props) => {
                     <NavLink to="/About" className={classes.column}>About</NavLink>
                     <NavLink to="./ProductPage" className={classes.column}>Product</NavLink>
                     <NavLink to="/ContactUS" className={classes.column}>ContactUS</NavLink>
+                    <NavLink to="/Login" className={classes.column}>Login</NavLink>
                 </div>
             </div>
             <h1 className={classes.row2}>The Generics</h1>

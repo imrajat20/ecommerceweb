@@ -4,14 +4,22 @@ import CartContext from "./cart-context";
 const CartProvider = props => {
 
     const [items, updateItems] = useState([]);
+
+    // const [isLoggedIn, setIsLoggedIn] = useState(false);
     const initialToken = localStorage.getItem('idToken');
 
     const [token, setToken] = useState(initialToken);
 
-    const isLoggedInHandler = !! token;
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
     const loginHandler = (token) => {
+        // setIsLoggedIn(true);
         setToken(token);
+        setIsLoggedIn(true);
+        console.log("this token",token);
+        // setIsLoggedInHandler(true);
+        // setIsLoggedIn(true);
     };
 
     const addItemToCart = item => {
@@ -25,18 +33,18 @@ const CartProvider = props => {
         updateItems((prevItems) => prevItems.filter((item) => item.id !== id));
     };
 
-    const cartContext = {
+    const cartvalue = {
         items: items,
         totolAmount: 0,
         addItem: addItemToCart,
         removeItem: removeItemFromCartHandler ,
         token: token,
-        isLoggedIn: isLoggedInHandler,
+        loggedIn: isLoggedIn,
         login:loginHandler
     };
     return (
 
-        <CartContext.Provider value={cartContext}>
+        <CartContext.Provider value={cartvalue}>
         {props.children}
     </CartContext.Provider>
     );

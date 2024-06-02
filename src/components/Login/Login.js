@@ -46,6 +46,8 @@ const Login = () => {
           console.log(data);
           cartCtx.login(data.idToken);
           localStorage.setItem('idToken',data.idToken);
+
+
           navigate('/ProductPage');
         })
         .catch((err) => {
@@ -72,7 +74,7 @@ const Login = () => {
         />
       </div>
       <div className={classes.actions}>
-      <button>Login</button>
+      <button >Login</button>
       </div>
     </form>
   </section>

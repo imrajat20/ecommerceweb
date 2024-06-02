@@ -34,7 +34,7 @@ const App = () => {
                 <Route path="/Store" element={<Store onClick={showCart} />} />
                 {cartCtx.loggedIn && <Route path="/About" element={<About />}/>}
                 <Route path="/Homepage" element={<Homepage/>} />
-                <Route path="/ProductPage" element={<ProductPage/>}/>
+                {cartCtx.loggedIn && <Route path="/ProductPage" element={<ProductPage/>}/>}
                 <Route path='/ContactUS' element={<ContactUS/>}/>
                 <Route path='/ProductPage/:detail' element={<ProductDetails/>}/>
                 <Route path='/Login' element={<Login/>}/>
